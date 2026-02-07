@@ -153,6 +153,7 @@ a {
 }
 
 .page-hero-text {
+  font-size: 13px;
   color: rgba(15, 32, 55, 0.8);
   line-height: 1.7;
 }
