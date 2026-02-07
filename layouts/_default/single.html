@@ -3,13 +3,7 @@
   <div class="container">
     <article class="single">
       {{ if eq .Type "seminar" }}
-        <div class="single-banner">
-          <div class="single-banner-inner">
-            <div class="single-banner-label">Seminar Notice</div>
-            <div class="single-banner-title">{{ .Title }}</div>
-            <div class="single-banner-sub">先物・FX・オプションをテーマとしたセミナーのご案内</div>
-          </div>
-        </div>
+        <div class="single-banner single-banner--seminar" aria-hidden="true"></div>
         <div class="single-header">
           <span class="tag cat-{{ .Params.category | urlize }}">{{ .Params.category }}</span>
           <span class="status {{ .Params.status }}">{{ .Params.status }}</span>
@@ -22,6 +16,7 @@
           <div>告知公開日: {{ .Date.Format "2006-01-02" }}</div>
         </div>
       {{ else }}
+        <div class="single-banner single-banner--tech" aria-hidden="true"></div>
         <h1>{{ .Title }}</h1>
         <div class="single-meta">
           <div>公開日: {{ if .Date.IsZero }}{{ now.Format "2006-01-02" }}{{ else }}{{ .Date.Format "2006-01-02" }}{{ end }}</div>
