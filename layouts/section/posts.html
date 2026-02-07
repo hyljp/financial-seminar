@@ -1,0 +1,56 @@
+{{ define "main" }}
+{{ $seminars := where site.RegularPages "Type" "seminar" }}
+{{ $upcoming := where $seminars "Params.status" "upcoming" }}
+{{ $past := where $seminars "Params.status" "past" }}
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div>
+      <div class="page-hero-kicker">Seminar Archive</div>
+      <h1>{{ .Title }}</h1>
+      {{ if .Content }}
+        <div class="page-hero-text">{{ .Content }}</div>
+      {{ end }}
+    </div>
+    <div class="page-hero-panel">
+      <div class="page-hero-label">Official Notice</div>
+      <div class="page-hero-text">開催予定と過去開催を分野別に整理して掲載しています。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Upcoming</div>
+    <div class="grid cards">
+      {{ if gt (len $upcoming) 0 }}
+        {{ range $upcoming }}
+          {{ partial "seminar-card.html" . }}
+        {{ end }}
+      {{ else }}
+        <div class="empty">現在、開催予定のセミナーはありません。</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-title">Past</div>
+    <div class="grid cards">
+      {{ if gt (len $past) 0 }}
+        {{ range $past }}
+          {{ partial "seminar-card.html" . }}
+        {{ end }}
+      {{ else }}
+        <div class="empty">過去セミナーの掲載はありません。</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

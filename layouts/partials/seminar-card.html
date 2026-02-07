@@ -1,0 +1,16 @@
+{{- $category := .Params.category | default "" -}}
+{{- $catClass := printf "cat-%s" (urlize $category) -}}
+<article class="card seminar-card {{ $catClass }}">
+  <div class="card-header">
+    <span class="tag">{{ $category }}</span>
+    {{ if .Params.status }}
+      <span class="status {{ .Params.status }}">{{ .Params.status }}</span>
+    {{ end }}
+  </div>
+  <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <div class="card-meta">
+    <div>開催日: {{ .Params.event_date }}</div>
+    <div>時間: {{ .Params.event_time }}</div>
+    <div>形式: {{ .Params.location }}</div>
+  </div>
+</article>

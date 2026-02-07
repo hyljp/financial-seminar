@@ -1,0 +1,75 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <h1>{{ site.Title }}</h1>
+      <p class="subtitle">{{ site.Params.site_subtitle }}</p>
+    </div>
+    <div class="hero-panel">
+      <div class="hero-label">Official Notice</div>
+      <div class="hero-text">先物・FX・オプションをテーマとしたセミナーのご案内</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-title">セミナー分野</div>
+    <div class="grid category-grid">
+      <div class="category-card cat-futures">
+        <div class="category-title">Futures</div>
+        <div class="category-sub">先物取引</div>
+        <div class="category-desc">先物取引の制度設計、リスク管理、実務運用を体系的に解説。</div>
+      </div>
+      <div class="category-card cat-fx">
+        <div class="category-title">FX</div>
+        <div class="category-sub">外国為替証拠金取引</div>
+        <div class="category-desc">為替市場の構造、レバレッジ管理、取引ルールを実務目線で整理。</div>
+      </div>
+      <div class="category-card cat-options">
+        <div class="category-title">Options</div>
+        <div class="category-sub">オプション取引</div>
+        <div class="category-desc">オプションの基本概念から損益構造、ヘッジ戦略までを網羅。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ $seminars := where site.RegularPages "Type" "seminar" }}
+{{ $upcoming := where $seminars "Params.status" "upcoming" }}
+{{ $tech := where site.RegularPages "Section" "tech" }}
+{{ $recentTech := first 4 (sort $tech "Date" "desc") }}
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">開催予定セミナー</div>
+    <div class="grid cards">
+      {{ if gt (len $upcoming) 0 }}
+        {{ range $upcoming }}
+          {{ partial "seminar-card.html" . }}
+        {{ end }}
+      {{ else }}
+        <div class="empty">現在、開催予定のセミナーはありません。</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-title">運用 実践解説</div>
+    <div class="grid cards">
+      {{ if gt (len $recentTech) 0 }}
+        {{ range $recentTech }}
+          <article class="card announcement-card">
+            <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <div class="card-meta">公開日: {{ if .Date.IsZero }}{{ now.Format "2006-01-02" }}{{ else }}{{ .Date.Format "2006-01-02" }}{{ end }}</div>
+          </article>
+        {{ end }}
+      {{ else }}
+        <div class="empty">技術研修・分析記事は準備中です。</div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

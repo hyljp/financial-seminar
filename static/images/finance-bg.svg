@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2f4b"/>
+      <stop offset="1" stop-color="#0b1c2e"/>
+    </linearGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8d38f"/>
+      <stop offset="1" stop-color="#b8923b"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3c6aa6" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3c6aa6" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="700" fill="url(#g1)" />
+  <g opacity="0.25">
+    <path d="M40 520 C 160 470, 260 560, 380 520 C 520 470, 600 560, 740 520 C 900 470, 980 560, 1200 500" stroke="url(#line)" stroke-width="3" fill="none"/>
+    <path d="M60 420 C 220 380, 320 450, 520 410 C 700 370, 900 450, 1180 400" stroke="url(#line)" stroke-width="2" fill="none"/>
+  </g>
+  <g opacity="0.35">
+    <circle cx="1100" cy="170" r="82" fill="url(#coin)"/>
+    <circle cx="1180" cy="220" r="56" fill="url(#coin)"/>
+    <circle cx="1040" cy="240" r="42" fill="url(#coin)"/>
+  </g>
+  <g opacity="0.18">
+    <rect x="140" y="140" width="180" height="6" fill="#7aa1d3"/>
+    <rect x="140" y="170" width="260" height="6" fill="#7aa1d3"/>
+    <rect x="140" y="200" width="220" height="6" fill="#7aa1d3"/>
+  </g>
+</svg>
