@@ -109,7 +109,7 @@ a {
 
 .hero {
   background-image:
-    url("/images/finance-light.svg"),
+    url("../images/finance-light.svg"),
     linear-gradient(135deg, rgba(247, 249, 252, 0.6) 0%, rgba(231, 237, 246, 0.55) 100%);
   background-size: cover;
   background-position: center;
@@ -122,7 +122,7 @@ a {
 
 .page-hero {
   background-image:
-    url("/images/finance-light.svg"),
+    url("../images/finance-light.svg"),
     linear-gradient(140deg, rgba(247, 249, 252, 0.6) 0%, rgba(231, 237, 246, 0.55) 100%);
   background-size: cover;
   background-position: center;
