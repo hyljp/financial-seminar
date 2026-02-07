@@ -1,8 +1,19 @@
-{{- $category := .Params.category | default "" -}}
-{{- $catClass := printf "cat-%s" (urlize $category) -}}
+{{- $categories := .Params.categories | default (slice) -}}
+{{- $primary := "" -}}
+{{- if gt (len $categories) 0 -}}
+  {{- $primary = index $categories 0 -}}
+{{- end -}}
+{{- $catClass := "" -}}
+{{- if $primary -}}
+  {{- $catClass = printf "cat-%s" (urlize $primary) -}}
+{{- end -}}
 <article class="card seminar-card {{ $catClass }}">
   <div class="card-header">
-    <span class="tag">{{ $category }}</span>
+    {{- if gt (len $categories) 0 -}}
+      {{- range $categories -}}
+        <span class="tag">{{ . }}</span>
+      {{- end -}}
+    {{- end -}}
     {{ if .Params.status }}
       <span class="status {{ .Params.status }}">{{ .Params.status }}</span>
     {{ end }}

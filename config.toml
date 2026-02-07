@@ -1,7 +1,7 @@
 baseURL = "https://www.hyl-inc.com/financial-seminar/"
 languageCode = "ja"
 defaultContentLanguage = "ja"
-title = "HYL セミナーのご案内"
+title = "HYL 金融市場研究会"
 
 timeZone = "Asia/Tokyo"
 
@@ -12,7 +12,7 @@ taxonomies = { category = "categories" }
   site_subtitle = "Futures · FX · Options"
   tagline = "定期開催セミナーの公式告知サイト"
   upcoming_cta = "Upcoming Seminars"
-  disclaimer = "本セミナーは情報提供および教育目的で実施されるものであり、特定の金融商品の売買や投資判断を推奨するものではありません。最終的な投資判断はご自身の責任において行ってください。"
+  disclaimer = "⚠️ 本セミナーは情報提供および教育目的で実施されるものであり、特定の金融商品の売買や投資判断を推奨するものではありません。最終的な投資判断はご自身の責任において行ってください。 ⚠️"
   address = "〒235-0045<br>神奈川県横浜市磯子区洋光台3-28-8"
 
 [markup]
